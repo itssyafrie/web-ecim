@@ -1,3 +1,4 @@
+import LoginForm from "@/components/forms/LoginForm";
 import LoginButton from "@/components/ui/LoginButton";
 import Logo from "@/components/ui/Logo";
 import Link from "next/link";
@@ -10,14 +11,7 @@ const Login = () => {
           <Logo />
         </div>
         <div className="flex flex-col py-4 px-12 gap-y-4">
-          <input
-            className="pl-4 font-light text-sm text-neutral-400 bg-neutral-900 w-full py-3 hover:shadow-xl transition cursor-pointer rounded-lg ring-1 ring-slate-900/5"
-            placeholder="Email"
-          />
-          <input
-            className="pl-4 font-light text-sm text-neutral-400 bg-neutral-900 w-full py-3 hover:shadow-xl transition cursor-pointer rounded-lg ring-1 ring-slate-900/5"
-            placeholder="Password"
-          />
+          <LoginForm />
         </div>
         <LoginButton />
         <div className="flex flex-col py-4 px-12 items-center justify-center gap-y-2">

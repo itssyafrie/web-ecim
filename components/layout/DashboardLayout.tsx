@@ -2,10 +2,10 @@
 
 import { BarChartBig, House, Ticket } from "lucide-react";
 import { useState } from "react";
-import DashboardHome from "../layout/DashboardHome";
-import DashboardEvents from "../layout/DashboardEvents";
+import DashboardHome from "./DashboardHome";
+import DashboardEvents from "./DashboardEvents";
 import Link from "next/link";
-import Statistics from "../layout/Statistics";
+import Statistics from "./Statistics";
 
 const DashboardLayout = () => {
   const [activePage, setActivePage] = useState("home");

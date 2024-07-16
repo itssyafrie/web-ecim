@@ -1,3 +1,4 @@
+import SignupForm from "@/components/forms/SignupForm";
 import Logo from "@/components/ui/Logo";
 import SignUpButton from "@/components/ui/SignUpButton";
 import Link from "next/link";
@@ -9,23 +10,8 @@ const SignUp = () => {
         <div className="flex flex-row items-center justify-center py-4 px-12">
           <Logo />
         </div>
-        <div className="flex flex-col py-4 px-12 gap-y-4">
-          <input
-            className="pl-4 font-light text-sm text-neutral-400 bg-neutral-900 w-full py-3 hover:shadow-xl transition cursor-pointer rounded-lg ring-1 ring-slate-900/5"
-            placeholder="Name"
-          />
-          <input
-            className="pl-4 font-light text-sm text-neutral-400 bg-neutral-900 w-full py-3 hover:shadow-xl transition cursor-pointer rounded-lg ring-1 ring-slate-900/5"
-            placeholder="Email"
-          />
-          <input
-            className="pl-4 font-light text-sm text-neutral-400 bg-neutral-900 w-full py-3 hover:shadow-xl transition cursor-pointer rounded-lg ring-1 ring-slate-900/5"
-            placeholder="Password"
-          />
-          <input
-            className="pl-4 font-light text-sm text-neutral-400 bg-neutral-900 w-full py-3 hover:shadow-xl transition cursor-pointer rounded-lg ring-1 ring-slate-900/5"
-            placeholder="Referral"
-          />
+        <div className="py-4 px-12">
+          <SignupForm />
         </div>
         <SignUpButton />
         <div className="flex flex-col py-4 px-12 items-center justify-center gap-y-2">
