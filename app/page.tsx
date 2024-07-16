@@ -1,5 +1,3 @@
-import Card from "@/components/ui/Card";
-import CardList from "@/components/ui/CardList";
 import Categories from "@/components/ui/Categories";
 import Container from "@/components/ui/Container";
 import EventList from "@/components/ui/EventList";

@@ -25,6 +25,4 @@ export interface EventResponse {
         availability: number;
     };
     price: number;
-    ouline?: boolean;
-    small?: boolean;
 }
