@@ -1,6 +1,6 @@
 import {config} from "@/constants/url";
 import axiosInstance from "@/utils/axiosInstance";
-import {EventResponse} from "@/types/Event";
+import {EventEntity} from "@/types/EventEntity";
 
 
 const fetchEvents = async () => {
@@ -16,7 +16,7 @@ const fetchEvents = async () => {
 }
 
 const getEvents = async () => {
-    return (await fetchEvents()) as unknown as EventResponse[]
+    return (await fetchEvents()) as unknown as EventEntity[]
 }
 
 export default getEvents

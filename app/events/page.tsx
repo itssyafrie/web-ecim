@@ -5,7 +5,7 @@ import Container from "@/components/ui/Container";
 import EventCard from "@/components/ui/EventCard";
 import Navbar from "@/components/ui/Navbar";
 import ReviewList from "@/components/ui/ReviewList";
-import { EventResponse } from "@/types/Event";
+import { EventResponse } from "@/types/EventEntity";
 import { useState, useEffect } from "react";
 
 const EventDetails = () => {

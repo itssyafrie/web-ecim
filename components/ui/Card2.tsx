@@ -1,4 +1,4 @@
-import { EventResponse } from "@/types/Event";
+import { EventResponse } from "@/types/EventEntity";
 
 interface Card2Props {
   eventResponse: EventResponse;

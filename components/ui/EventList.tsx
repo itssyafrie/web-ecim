@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { EventResponse } from "@/types/Event";
+import { EventEntity } from "@/types/EventEntity";
 import Card2 from "./Card2";
 import useEvents from "@/hooks/useEvents";
 

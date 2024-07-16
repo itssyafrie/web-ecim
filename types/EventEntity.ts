@@ -1,4 +1,4 @@
-export interface EventResponse {
+export interface EventEntity {
     id: number;
     title: string;
     description: string;
