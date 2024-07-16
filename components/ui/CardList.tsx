@@ -4,10 +4,10 @@ const CardList = () => {
   const events = [
     {
       title: "Music Concert",
+      description: "Enjoy a night of great music with top artists.",
       location: "New York, USA",
       imageSrc: "/images/huuhuynh.jpg",
       price: 50000,
-      description: "Enjoy a night of great music with top artists.",
     },
     {
       title: "Art Exhibition",

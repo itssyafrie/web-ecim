@@ -1,11 +1,14 @@
 "use client";
 
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, LucideIcon } from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
 
 interface DropdownOption {
   value: string;
   label: string;
+  href?: string;
+  icon?: LucideIcon;
 }
 
 interface DropdownProps {
@@ -53,20 +56,34 @@ const Dropdown: React.FC<DropdownProps> = ({
             aria-orientation="vertical"
             aria-labelledby="options-menu"
           >
-            {options.map((option) => (
-              <a
-                key={option.value}
-                href="#"
-                className="block px-4 py-2 mx-2 my-2 text-sm rounded-md text-neutral-300 hover:bg-blue-500 hover:text-gray-900"
-                role="menuitem"
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleSelect(option);
-                }}
-              >
-                {option.label}
-              </a>
-            ))}
+            {options.map((option) =>
+              option.href ? (
+                <Link key={option.value} href={option.href} passHref>
+                  <div
+                    className="block px-4 py-2 mx-2 my-2 text-sm rounded-md text-neutral-300 hover:bg-blue-500 hover:text-gray-900"
+                    role="menuitem"
+                    onClick={() => handleSelect(option)}
+                  >
+                    {option.icon && <option.icon className="mr-2 h-5 w-5" />}
+                    {option.label}
+                  </div>
+                </Link>
+              ) : (
+                <Link
+                  key={option.value}
+                  href="#"
+                  className="block px-4 py-2 mx-2 my-2 text-sm rounded-md text-neutral-300 hover:bg-blue-500 hover:text-gray-900"
+                  role="menuitem"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleSelect(option);
+                  }}
+                >
+                  {option.icon && <option.icon className="mr-2 h-5 w-5" />}
+                  {option.label}
+                </Link>
+              )
+            )}
           </div>
         </div>
       )}

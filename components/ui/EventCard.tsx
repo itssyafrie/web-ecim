@@ -1,3 +1,5 @@
+"use client";
+
 const EventCard = () => {
   return (
     <div className="rounded-lg w-auto border-[0.3px] border-neutral-700 bg-neutral-800 hover:shadow-xl hover:shadow-black/70 p-6 text-neutral-300">

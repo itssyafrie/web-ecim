@@ -1,11 +1,11 @@
 interface CardProps {
   title: string;
+  description?: string;
   imageSrc?: string;
   location?: string;
-  price?: number;
+  price: number;
   outline?: boolean;
   small?: boolean;
-  description?: string;
 }
 
 const Card: React.FC<CardProps> = ({
