@@ -12,6 +12,8 @@ export const config = {
         getEvents: "event",
         getCategories: "event/category",
         getInterests: "event/interest",
-        getOrganizersEvents: "event/organizer"
+        getOrganizersEvents: "event/organizer",
+        // DASHBOARD
+        getDashboardEvents: "dashboard/events"
     },
 };
