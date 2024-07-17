@@ -1,4 +1,4 @@
-export interface EventEntity {
+export interface eventEntity {
     id: number;
     title: string;
     description: string;
@@ -25,4 +25,14 @@ export interface EventEntity {
         availability: number;
     };
     price: number;
+}
+
+export interface category {
+    id: number;
+    name: string;
+}
+
+export interface interest {
+    id: number;
+    name: string;
 }

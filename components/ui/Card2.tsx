@@ -1,12 +1,12 @@
-import { EventResponse } from "@/types/EventEntity";
+import { eventEntity } from "@/types/types";
 
 interface Card2Props {
-  eventResponse: EventResponse;
+  eventEntity: eventEntity;
   outline?: boolean;
   small?: boolean;
 }
 
-const Card2: React.FC<Card2Props> = ({ eventResponse, outline, small }) => {
+const Card2: React.FC<Card2Props> = ({ eventEntity, outline, small }) => {
   const {
     id,
     title,
@@ -17,7 +17,7 @@ const Card2: React.FC<Card2Props> = ({ eventResponse, outline, small }) => {
     interest,
     offering,
     price,
-  } = eventResponse;
+  } = eventEntity;
 
   return (
     <div
