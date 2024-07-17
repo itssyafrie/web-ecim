@@ -2,9 +2,15 @@
 
 import Card2 from "./Card2";
 import useEvents from "@/hooks/useEvents";
+import {useState} from "react";
+import {EventSearchParams} from "@/types/types";
 
 const EventList: React.FC = () => {
-    const { events, isLoading, isError, error } = useEvents()
+    const [searchParams, setSearchParams] = useState<EventSearchParams>({
+        page: 0,
+        size: 9
+    })
+    const { events, isLoading, isError, error } = useEvents(searchParams)
 
 
   return (

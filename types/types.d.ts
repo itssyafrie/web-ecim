@@ -36,3 +36,13 @@ export interface interest {
     id: number;
     name: string;
 }
+
+interface EventSearchParams {
+    title?: string;
+    category?: string;
+    interest?: string;
+    city?: string;
+    state?: string;
+    page?: number;
+    size?: number;
+}
