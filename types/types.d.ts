@@ -79,3 +79,11 @@ interface TimeframeParams {
     timeSpecifier: TimeSpecifier;
     date: string // COMPLIANT TO ISO 8601 DATE STRING
 }
+
+interface AvailableDiscount {
+    id: number,
+    name: string,
+    description: string,
+    amountFlat: number,
+    amountPercent: number
+}

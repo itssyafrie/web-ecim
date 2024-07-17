@@ -10,6 +10,7 @@ import useDashboardStats from "@/hooks/dashboard/useDashboardStats";
 import {TimeSpecifier} from "@/types/enums/TimeSpecifier";
 import {useState} from "react";
 import useDashboardTrxs from "@/hooks/dashboard/useDashboardTrxs";
+import useAvailableDiscount from "@/hooks/discount/useAvailableDiscount";
 
 export default function Home() {
     const [pagination, setPagination] = useState<PaginationParams>({
@@ -20,7 +21,7 @@ export default function Home() {
         timeSpecifier: TimeSpecifier.YEAR,
         date: new Date().toISOString()
     }
-    const { trxs, isLoading, isError, error } = useDashboardTrxs(params, pagination)
+    // const { trxs, isLoading, isError, error } = useDashboardTrxs(params, pagination)
     // const { stats, isLoading, isError, error } = useDashboardStats(params)
     // useEffect(() => {
     //     const fetch = async () => {
@@ -30,7 +31,8 @@ export default function Home() {
     //     fetch()
     // }, [])
 
-    console.log(trxs)
+    const { discounts, isLoading, isError, error } = useAvailableDiscount(1)
+    console.log(discounts)
   return (
     <main className="min-h-screen">
       <Container>

@@ -2,6 +2,7 @@ const path = {
     auth: 'auth',
     user: 'user',
     event: 'event',
+    discount: 'discount',
     dashboard: 'dashboard'
 };
 export const config = {
@@ -22,7 +23,12 @@ export const config = {
             getInterests: `${path.event}/interest`,
             getOrganizersEvents: `${path.event}/organizer`,
         },
-        // DASHBOARD
+        discount: {
+            getAvailableDiscount: `${path.discount}/available`,
+            createEventDiscount: `${path.discount}/event`,
+            claimDiscount: `${path.discount}/claim`,
+            redeemDiscount: `${path.discount}/redeem`
+        },
         dashboard: {
             getDashboardEvents: `${path.dashboard}/events`,
             getTrxs: `${path.dashboard}/trxs`,
