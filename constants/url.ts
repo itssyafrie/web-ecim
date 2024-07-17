@@ -3,7 +3,8 @@ const path = {
     user: 'user',
     event: 'event',
     discount: 'discount',
-    dashboard: 'dashboard'
+    dashboard: 'dashboard',
+    trx: 'trx'
 };
 export const config = {
     BASE_URL: process.env.NEXT_PUBLIC_BASE_URL,
@@ -34,5 +35,8 @@ export const config = {
             getTrxs: `${path.dashboard}/trxs`,
             getStats: `${path.dashboard}/stats`
         },
+        trx: {
+            trx: path.trx
+        }
     },
 };
