@@ -1,6 +1,6 @@
 import {config} from "@/constants/url";
 import axiosInstance from "@/utils/axiosInstance";
-import {category} from "@/types/types";
+import {Category} from "@/types/types";
 
 
 const fetchCategories = async () => {
@@ -16,7 +16,7 @@ const fetchCategories = async () => {
 }
 
 const getCategories = async () => {
-    return (await fetchCategories()) as unknown as category[]
+    return (await fetchCategories()) as unknown as Category[]
 }
 
 export default getCategories

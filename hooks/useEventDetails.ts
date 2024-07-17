@@ -1,11 +1,11 @@
 import {useQuery} from "@tanstack/react-query";
 import {GET_EVENT_DETAILS} from "@/constants/queryKey";
-import {eventEntity} from "@/types/types";
+import {EventEntity} from "@/types/types";
 import getEventDetails from "@/api/getEventDetails";
 
 
-const useEvents = (id: number) => {
-    const { isPending, isError, data, error } = useQuery<eventEntity, Error>({
+const useEventDetails = (id: number) => {
+    const { isPending, isError, data, error } = useQuery<EventEntity, Error>({
         queryKey: [GET_EVENT_DETAILS, id],
         queryFn: async () => await getEventDetails(id)
     })
@@ -18,4 +18,4 @@ const useEvents = (id: number) => {
     }
 }
 
-export default useEvents
+export default useEventDetails

@@ -1,7 +1,7 @@
-import { eventEntity } from "@/types/types";
+import { EventEntity } from "@/types/types";
 
 interface Card2Props {
-  eventEntity: eventEntity;
+  eventEntity: EventEntity;
   outline?: boolean;
   small?: boolean;
 }

@@ -1,6 +1,6 @@
 import {config} from "@/constants/url";
 import axiosInstance from "@/utils/axiosInstance";
-import {interest} from "@/types/types";
+import {Interest} from "@/types/types";
 
 
 const fetchInterests = async () => {
@@ -15,7 +15,7 @@ const fetchInterests = async () => {
 }
 
 const getInterests = async () => {
-    return (await fetchInterests()) as unknown as interest[]
+    return (await fetchInterests()) as unknown as Interest[]
 }
 
 export default getInterests

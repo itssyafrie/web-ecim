@@ -1,11 +1,11 @@
 import {useQuery} from "@tanstack/react-query";
-import {interest} from "@/types/types";
+import {Interest} from "@/types/types";
 import {GET_INTERESTS} from "@/constants/queryKey";
 import getInterests from "@/api/getInterests";
 
 
 const useInterests = () => {
-    const { isPending, isError, data, error } = useQuery<interest[], Error>({
+    const { isPending, isError, data, error } = useQuery<Interest[], Error>({
         queryKey: [GET_INTERESTS],
         queryFn: async () => await getInterests()
     })

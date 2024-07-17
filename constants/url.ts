@@ -3,6 +3,7 @@ export const config = {
     endpoints: {
         getEvents: "event",
         getCategories: "event/category",
-        getInterests: "event/interest"
+        getInterests: "event/interest",
+        getOrganizersEvents: "event/organizer"
     },
 };

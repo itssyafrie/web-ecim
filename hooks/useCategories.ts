@@ -1,10 +1,10 @@
 import {useQuery} from "@tanstack/react-query";
-import {category} from "@/types/types";
+import {Category} from "@/types/types";
 import {GET_CATEGORIES} from "@/constants/queryKey";
 import getCategories from "@/api/getCategories";
 
 const useCategories = () => {
-    const { isPending, isError, data, error } = useQuery<category[], Error>({
+    const { isPending, isError, data, error } = useQuery<Category[], Error>({
         queryKey: [GET_CATEGORIES],
         queryFn: async () => await getCategories()
     })

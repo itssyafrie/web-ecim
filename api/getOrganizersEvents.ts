@@ -1,15 +1,14 @@
 import {config} from "@/constants/url";
 import axiosInstance from "@/utils/axiosInstance";
-import {EventEntity, EventSearchParams} from "@/types/types";
+import {EventEntity, PaginationParams} from "@/types/types";
 
 
-const fetchEvents = async (params: EventSearchParams) => {
-    const endpoint = config.endpoints.getEvents
+const fetchOrganizersEvents = async (params: PaginationParams) => {
+    const endpoint = config.endpoints.getOrganizersEvents
 
     try {
         const res = await axiosInstance.get(endpoint, {
             params: {
-                ...params,
                 page: params.page ?? 0,
                 size: params.size ?? 10
             }
@@ -21,8 +20,8 @@ const fetchEvents = async (params: EventSearchParams) => {
 
 }
 
-const getEvents = async (params: EventSearchParams) => {
-    return (await fetchEvents(params)) as unknown as EventEntity[]
+const getOrganizersEvents = async (params: PaginationParams) => {
+    return (await fetchOrganizersEvents(params)) as unknown as EventEntity[]
 }
 
-export default getEvents
+export default getOrganizersEvents

@@ -1,4 +1,4 @@
-export interface eventEntity {
+export interface EventEntity {
     id: number;
     title: string;
     description: string;
@@ -27,12 +27,12 @@ export interface eventEntity {
     price: number;
 }
 
-export interface category {
+export interface Category {
     id: number;
     name: string;
 }
 
-export interface interest {
+export interface Interest {
     id: number;
     name: string;
 }
@@ -43,6 +43,11 @@ interface EventSearchParams {
     interest?: string;
     city?: string;
     state?: string;
+    page?: number;
+    size?: number;
+}
+
+interface PaginationParams {
     page?: number;
     size?: number;
 }
