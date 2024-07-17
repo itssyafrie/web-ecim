@@ -2,14 +2,22 @@
 
 interface ButtonProps {
   label: string;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
   btnlarge?: boolean;
   outline?: boolean;
   small?: boolean;
 }
 
-const Button: React.FC<ButtonProps> = ({ label, btnlarge, outline, small }) => {
+const Button: React.FC<ButtonProps> = ({
+  label,
+  onClick,
+  btnlarge,
+  outline,
+  small,
+}) => {
   return (
     <button
+      onClick={onClick}
       className={`rounded-lg hover:opacity-80 
       ${btnlarge ? "w-full" : "w-auto"}
       ${outline ? "bg-neutral-900" : "bg-blue-500"} 

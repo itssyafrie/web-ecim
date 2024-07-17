@@ -26,3 +26,25 @@ export interface EventResponse {
     };
     price: number;
 }
+
+// export interface SearchParams {
+//     title?: string;
+//     category?: string;
+//     interest?: string;
+//     city?: string;
+//     state?: string;
+//     page: number;
+//     size: number;
+//   }
+
+//   export interface Suggestion {
+//     text: string;
+//     type: 'title' | 'category' | 'interest' | 'location';
+//   }
+  
+//   export interface SearchResponse {
+//     content: Event[];
+//     totalPages: number;
+//     totalElements: number;
+//     // Add more pagination-related fields if needed
+//   }
