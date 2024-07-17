@@ -1,3 +1,5 @@
+import {TimeSpecifier} from "@/types/enums/TimeSpecifier";
+
 export interface EventEntity {
     id: number;
     title: string;
@@ -64,4 +66,16 @@ interface Trx {
 interface Tix {
     code: string;
     eventOffering: EventOffering;
+}
+
+interface Stats {
+    count: number;
+    offeringId: number;
+    price: number;
+    revenue: number;
+}
+
+interface TimeframeParams {
+    timeSpecifier: TimeSpecifier;
+    date: string // COMPLIANT TO ISO 8601 DATE STRING
 }

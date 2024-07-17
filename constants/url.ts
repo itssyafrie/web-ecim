@@ -25,7 +25,8 @@ export const config = {
         // DASHBOARD
         dashboard: {
             getDashboardEvents: `${path.dashboard}/events`,
-            getTrxs: `${path.dashboard}/trxs`
+            getTrxs: `${path.dashboard}/trxs`,
+            getStats: `${path.dashboard}/stats`
         },
     },
 };
