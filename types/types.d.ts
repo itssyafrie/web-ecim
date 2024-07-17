@@ -17,14 +17,17 @@ export interface EventEntity {
         id: number;
         name: string;
     };
-    offering: {
-        name: string;
-        description: string;
-        price: number;
-        capacity: number;
-        availability: number;
-    };
+    offering: Set<EventOffering>;
     price: number;
+}
+
+interface EventOffering {
+    id: number;
+    name: string;
+    description: string;
+    price: number;
+    capacity: number;
+    availability: number;
 }
 
 export interface Category {
@@ -50,4 +53,15 @@ interface EventSearchParams {
 interface PaginationParams {
     page?: number;
     size?: number;
+}
+
+interface Trx {
+    id: number;
+    price: number;
+    tixes: Set<Tix>;
+}
+
+interface Tix {
+    code: string;
+    eventOffering: EventOffering;
 }

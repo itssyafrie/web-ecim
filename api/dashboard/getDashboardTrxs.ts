@@ -1,9 +1,9 @@
 import {config} from "@/constants/url";
 import axiosInstance from "@/utils/axiosInstance";
-import {EventEntity, PaginationParams} from "@/types/types";
+import {PaginationParams, Trx} from "@/types/types";
 
 
-const fetchDashboardEvents = async (params: PaginationParams) => {
+const fetchDashboardTrxs = async (params: PaginationParams) => {
     const endpoint = config.endpoints.dashboard.getDashboardEvents
 
 
@@ -24,8 +24,8 @@ const fetchDashboardEvents = async (params: PaginationParams) => {
 
 }
 
-const getDashboardEvents = async (params: PaginationParams) => {
-    return (await fetchDashboardEvents(params)) as unknown as EventEntity[]
+const getDashboardTrxs = async (params: PaginationParams) => {
+    return (await fetchDashboardTrxs(params)) as unknown as Trx[]
 }
 
-export default getDashboardEvents
+export default getDashboardTrxs

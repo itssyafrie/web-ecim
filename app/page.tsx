@@ -10,13 +10,15 @@ import {useEffect, useState} from "react";
 import useEvents from "@/hooks/event/useEvents";
 import useDashboardEvents from "@/hooks/dashboard/useDashboardEvents";
 import {EventSearchParams, PaginationParams} from "@/types/types";
+import useDashboardTrxs from "@/hooks/dashboard/useDashboardTrxs";
 
 export default function Home() {
     const [pagination, setPagination] = useState<PaginationParams>({
         page: 0,
         size: 9
     })
-    const { events, isLoading, isError, error } = useDashboardEvents(pagination)
+    // const { events, isLoading, isError, error } = useDashboardEvents(pagination)
+    const { trxs, isLoading, isError, error } = useDashboardTrxs(pagination)
     // useEffect(() => {
     //     const fetch = async () => {
     //         const res = await postLogin()
@@ -25,7 +27,7 @@ export default function Home() {
     //     fetch()
     // }, [])
 
-    console.log(events)
+    console.log(trxs)
   return (
     <main className="min-h-screen">
       <Container>
@@ -33,7 +35,7 @@ export default function Home() {
         <Searchbar />
         <Categories />
         {/* <CardList /> */}
-        {/*<EventList />*/}
+        <EventList />
       </Container>
     </main>
   );
