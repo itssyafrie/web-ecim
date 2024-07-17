@@ -4,7 +4,7 @@ import {Category} from "@/types/types";
 
 
 const fetchCategories = async () => {
-    const endpoint = config.endpoints.getCategories
+    const endpoint = config.endpoints.event.getCategories
 
     try {
         const res = await axiosInstance.get(endpoint)

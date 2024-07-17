@@ -4,7 +4,7 @@ import {EventEntity, EventSearchParams} from "@/types/types";
 
 
 const fetchEvents = async (params: EventSearchParams) => {
-    const endpoint = config.endpoints.getEvents
+    const endpoint = config.endpoints.event.getEvents
 
     try {
         const res = await axiosInstance.get(endpoint, {

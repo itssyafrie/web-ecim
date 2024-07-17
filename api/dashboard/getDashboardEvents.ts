@@ -4,7 +4,7 @@ import {EventEntity, PaginationParams} from "@/types/types";
 
 
 const fetchDashboardEvents = async (params: PaginationParams) => {
-    const endpoint = config.endpoints.getDashboardEvents
+    const endpoint = config.endpoints.dashboard.getDashboardEvents
 
 
     try {

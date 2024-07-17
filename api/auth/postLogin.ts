@@ -8,7 +8,7 @@ interface LoginResponse {
 }
 
 const postLogin = async () : Promise<string> => {
-    const endpoint = config.endpoints.login
+    const endpoint = config.endpoints.auth.login
 
     try {
         const res : LoginResponse = await axiosInstance.post(endpoint, {

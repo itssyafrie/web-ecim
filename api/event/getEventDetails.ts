@@ -4,7 +4,7 @@ import {EventEntity} from "@/types/types";
 
 
 const fetchEventDetails = async (id: number) => {
-    const endpoint = config.endpoints.getEvents
+    const endpoint = config.endpoints.event.getEvents
 
     try {
         const res = await axiosInstance.get(`${endpoint}/${id}`)

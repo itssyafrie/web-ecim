@@ -1,19 +1,30 @@
+const path = {
+    auth: 'auth',
+    user: 'user',
+    event: 'event',
+    dashboard: 'dashboard'
+};
 export const config = {
     BASE_URL: process.env.NEXT_PUBLIC_BASE_URL,
     endpoints: {
-        // AUTH
-        register: "auth/register",
-        login: "auth/login",
-        logout: "auth/logout",
-        // USER
-        createAttendee: "user/attendee",
-        createOrganizer: "user/organizer",
-        // EVENT
-        getEvents: "event",
-        getCategories: "event/category",
-        getInterests: "event/interest",
-        getOrganizersEvents: "event/organizer",
+        auth: {
+            register: `${path.auth}/register`,
+            login: `${path.auth}/login`,
+            logout: `${path.auth}/logout`,
+        },
+        user: {
+            createAttendee: `${path.user}/attendee`,
+            createOrganizer: `${path.user}/organizer`,
+        },
+        event: {
+            getEvents: path.event,
+            getCategories: `${path.event}/category`,
+            getInterests: `${path.event}/interest`,
+            getOrganizersEvents: `${path.event}/organizer`,
+        },
         // DASHBOARD
-        getDashboardEvents: "dashboard/events"
+        dashboard: {
+            getDashboardEvents: `${path.dashboard}/events`
+        },
     },
 };

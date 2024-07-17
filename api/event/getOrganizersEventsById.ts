@@ -4,7 +4,7 @@ import {EventEntity, PaginationParams} from "@/types/types";
 
 
 const fetchOrganizersEventsById = async (id: number, params: PaginationParams) => {
-    const endpoint = config.endpoints.getOrganizersEvents
+    const endpoint = config.endpoints.event.getOrganizersEvents
 
     try {
         const res = await axiosInstance.get(`${endpoint}/${id}`, {

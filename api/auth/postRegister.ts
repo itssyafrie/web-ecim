@@ -3,7 +3,7 @@ import axiosInstance from "@/utils/axiosInstance";
 
 
 const postRegister = async () => {
-    const endpoint = config.endpoints.register
+    const endpoint = config.endpoints.auth.register
 
     try {
         const res = await axiosInstance.post(endpoint, {

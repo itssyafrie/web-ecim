@@ -4,7 +4,7 @@ import {Interest} from "@/types/types";
 
 
 const fetchInterests = async () => {
-    const endpoint = config.endpoints.getInterests
+    const endpoint = config.endpoints.event.getInterests
 
     try {
         const res = await axiosInstance.get(endpoint)
