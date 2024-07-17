@@ -1,6 +1,6 @@
 import {useQuery} from "@tanstack/react-query";
 import {EventEntity, PaginationParams} from "@/types/types";
-import getOrganizersEvents from "@/api/getOrganizersEvents";
+import getOrganizersEvents from "@/api/event/getOrganizersEvents";
 import {GET_ORGANIZERS_EVENTS} from "@/constants/queryKey";
 
 

@@ -1,6 +1,6 @@
 import {useQuery} from "@tanstack/react-query";
 import {GET_EVENTS} from "@/constants/queryKey";
-import getEvents from "@/api/getEvents";
+import getEvents from "@/api/event/getEvents";
 import {EventEntity, EventSearchParams} from "@/types/types";
 
 

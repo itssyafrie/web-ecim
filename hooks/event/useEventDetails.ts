@@ -1,7 +1,7 @@
 import {useQuery} from "@tanstack/react-query";
 import {GET_EVENT_DETAILS} from "@/constants/queryKey";
 import {EventEntity} from "@/types/types";
-import getEventDetails from "@/api/getEventDetails";
+import getEventDetails from "@/api/event/getEventDetails";
 
 
 const useEventDetails = (id: number) => {

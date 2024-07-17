@@ -1,7 +1,7 @@
 import {useQuery} from "@tanstack/react-query";
 import {Category} from "@/types/types";
 import {GET_CATEGORIES} from "@/constants/queryKey";
-import getCategories from "@/api/getCategories";
+import getCategories from "@/api/event/getCategories";
 
 const useCategories = () => {
     const { isPending, isError, data, error } = useQuery<Category[], Error>({

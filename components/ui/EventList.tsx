@@ -1,7 +1,7 @@
 "use client";
 
 import Card2 from "./Card2";
-import useEvents from "@/hooks/useEvents";
+import useEvents from "@/hooks/event/useEvents";
 import {useState} from "react";
 import {EventSearchParams} from "@/types/types";
 

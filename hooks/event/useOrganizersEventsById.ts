@@ -1,7 +1,7 @@
 import {useQuery} from "@tanstack/react-query";
 import {EventEntity, PaginationParams} from "@/types/types";
 import {GET_ORGANIZERS_EVENTS} from "@/constants/queryKey";
-import getOrganizersEventsById from "@/api/getOrganizersEventsById";
+import getOrganizersEventsById from "@/api/event/getOrganizersEventsById";
 
 
 const useOrganizersEventsById = (id: number, params: PaginationParams) => {
