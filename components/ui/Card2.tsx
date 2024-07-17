@@ -1,3 +1,5 @@
+"use client";
+
 import { EventResponse } from "@/types/Event";
 
 interface Card2Props {

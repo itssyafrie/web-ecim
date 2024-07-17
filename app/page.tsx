@@ -1,7 +1,11 @@
+"use client";
+
 import Categories from "@/components/ui/Categories";
 import Container from "@/components/ui/Container";
 import EventList from "@/components/ui/EventList";
+import EventSearch from "@/components/ui/EventSearch";
 import Navbar from "@/components/ui/Navbar";
+import SearchBar from "@/components/ui/Searchbar";
 import Searchbar from "@/components/ui/Searchbar";
 
 export default function Home() {
@@ -9,7 +13,7 @@ export default function Home() {
     <main className="min-h-screen">
       <Container>
         <Navbar />
-        <Searchbar />
+        <EventSearch />
         <Categories />
         {/* <CardList /> */}
         <EventList />

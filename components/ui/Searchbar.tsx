@@ -1,78 +1,81 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useDebounce } from "use-debounce";
+import { searchSuggestions } from "@/app/api/api";
+import { Suggestion } from "@/types/Event";
 import Button from "./Button";
 
-const Searchbar = () => {
-  const [searchValue, setSearchValue] = useState("");
-  const [suggestions, setSuggestions] = useState([]);
-  const [selectedSuggestion, setSelectedSuggestion] = useState(null);
+interface SearchBarProps {
+  onSearch: (query: string) => void;
+}
 
-  const [debouncedSearchValue] = useDebounce(searchValue, 500);
+const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
+  const [query, setQuery] = useState("");
+  const [suggestions, setSuggestions] = useState<Suggestion[]>([]);
+  const [debouncedQuery] = useDebounce(query, 300);
+
+  const fetchSuggestions = useCallback(async (input: string) => {
+    if (input.trim() === "") {
+      setSuggestions([]);
+      return;
+    }
+    try {
+      const result = await searchSuggestions(input);
+      setSuggestions(result);
+    } catch (error) {
+      console.error("Error fetching suggestions:", error);
+      setSuggestions([]);
+    }
+  }, []);
 
   useEffect(() => {
-    const fetchSuggestions = async () => {
-      if (debouncedSearchValue) {
-        const response = await fetch(
-          `/api/v1/event/suggestions?query=${debouncedSearchValue}`
-        );
-        const data = await response.json();
-        setSuggestions(data);
-      } else {
-        setSuggestions([]);
-      }
-    };
+    fetchSuggestions(debouncedQuery);
+  }, [debouncedQuery, fetchSuggestions]);
 
-    fetchSuggestions();
-  }, [debouncedSearchValue]);
-
-  const handleSearchValueChange = (e) => {
-    setSearchValue(e.target.value);
-    setSelectedSuggestion(null);
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setQuery(e.target.value);
   };
 
-  const handleSuggestionClick = (suggestion) => {
-    setSearchValue(suggestion.label);
-    setSelectedSuggestion(suggestion);
-    setSuggestions([]);
+  const handleSearch = () => {
+    onSearch(query);
   };
 
-  const handleSearch = async () => {
-    if (selectedSuggestion) {
-      const { type, value } = selectedSuggestion;
-      const response = await fetch(`/api/v1/event?${type}=${value}`);
-      const data = await response.json();
-      console.log(data);
-    }
+  const handleSuggestionClick = (suggestion: Suggestion) => {
+    setQuery(suggestion.text);
+    onSearch(suggestion.text);
   };
 
   return (
-    <div className="flex flex-col items-center justify-between gap-y-4 my-4">
-      <div className="relative w-full">
-        <input
-          value={searchValue}
-          onChange={handleSearchValueChange}
-          className="pl-4 font-light text-sm text-neutral-400 bg-neutral-800 w-full py-3 hover:shadow-xl hover:shadow-black/70 transition cursor-pointer rounded-lg ring-1 ring-slate-900"
-          placeholder="Search by title, category, interest, city, or state"
-        />
-        {suggestions.length > 0 && (
-          <ul className="absolute bg-neutral-800 border border-neutral-700 w-full mt-1 rounded-lg max-h-60 overflow-y-auto">
-            {suggestions.map((suggestion) => (
-              <li
-                key={suggestion.value}
-                className="px-4 py-2 hover:bg-neutral-700 cursor-pointer"
-                onClick={() => handleSuggestionClick(suggestion)}
-              >
-                {suggestion.label}
-              </li>
-            ))}
-          </ul>
-        )}
+    <div className="relative">
+      <input
+        className="w-full px-4 py-2 text-sm text-neutral-300 bg-neutral-800 border rounded-lg border-neutral-700 focus:border-blue-500 focus:outline-none focus:ring"
+        type="text"
+        placeholder="Search for events, categories, interests, locations..."
+        value={query}
+        onChange={handleInputChange}
+      />
+      <div className="absolute right-2 top-2">
+        <Button label="Search" onClick={handleSearch} small />
       </div>
-      <Button label="Search" onClick={handleSearch} />
+      {suggestions.length > 0 && (
+        <ul className="absolute z-10 w-full mt-1 bg-neutral-800 border border-neutral-700 rounded-md shadow-lg">
+          {suggestions.map((suggestion, index) => (
+            <li
+              key={index}
+              className="px-4 py-2 hover:bg-neutral-700 cursor-pointer text-neutral-300"
+              onClick={() => handleSuggestionClick(suggestion)}
+            >
+              {suggestion.text}{" "}
+              <span className="text-xs text-neutral-400">
+                ({suggestion.type})
+              </span>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
 
-export default Searchbar;
+export default SearchBar;

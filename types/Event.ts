@@ -37,14 +37,13 @@ export interface EventResponse {
 //     size: number;
 //   }
 
-//   export interface Suggestion {
-//     text: string;
-//     type: 'title' | 'category' | 'interest' | 'location';
-//   }
+export interface Suggestion {
+    text: string;
+    type: 'title' | 'category' | 'interest' | 'location';
+  }
   
-//   export interface SearchResponse {
-//     content: Event[];
-//     totalPages: number;
-//     totalElements: number;
-//     // Add more pagination-related fields if needed
-//   }
+  export interface SearchResponse {
+    content: EventResponse[];
+    totalPages: number;
+    totalElements: number;
+  }
