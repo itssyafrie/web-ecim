@@ -6,7 +6,7 @@ import EventCard from "@/components/ui/EventCard";
 import EventDetailsList from "@/components/ui/EventDetailsList";
 import Navbar from "@/components/ui/Navbar";
 import ReviewList from "@/components/ui/ReviewList";
-import { EventResponse } from "@/types/Event";
+import { EventResponse } from "@/types/types";
 import { useState, useEffect } from "react";
 
 const EventDetails = () => {
