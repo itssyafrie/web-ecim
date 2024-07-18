@@ -3,6 +3,7 @@
 import ChooseTicket from "@/components/ui/ChooseTicket";
 import Container from "@/components/ui/Container";
 import EventCard from "@/components/ui/EventCard";
+import EventDetailsList from "@/components/ui/EventDetailsList";
 import Navbar from "@/components/ui/Navbar";
 import ReviewList from "@/components/ui/ReviewList";
 import { EventResponse } from "@/types/types";
@@ -37,7 +38,8 @@ const EventDetails = () => {
         <Navbar />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 py-8">
           <div className="md:col-span-2">
-            <EventCard />
+            {/* <EventCard /> */}
+            <EventDetailsList eventId={1} />
           </div>
           <ChooseTicket />
           <div className="md:col-span-2">

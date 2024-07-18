@@ -13,7 +13,7 @@ const UserMenu: React.FC = () => {
     console.log("Selected", value);
   };
   return (
-    <div>
+    <div className="md:hidden block">
       <Dropdown options={options} onSelect={handleSelect} placeholder="Menu" />
     </div>
   );
