@@ -7,7 +7,7 @@ import getEventDetails from "@/api/event/getEventDetails";
 const useEventDetails = (id: number) => {
     const { isPending, isError, data, error } = useQuery<EventEntity, Error>({
         queryKey: [GET_EVENT_DETAILS, id],
-        queryFn: async () => await getEventDetails(id)
+        queryFn: async () => await getEventDetails(id) as EventEntity
     })
 
     return {

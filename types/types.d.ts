@@ -19,7 +19,7 @@ export interface EventEntity {
         id: number;
         name: string;
     };
-    offering: Set<EventOffering>;
+    offerings: Set<EventOffering>;
     price: number;
 }
 
@@ -86,4 +86,9 @@ interface AvailableDiscount {
     description: string,
     amountFlat: number,
     amountPercent: number
+}
+
+interface EventSuggestion {
+    id: number,
+    title: string
 }

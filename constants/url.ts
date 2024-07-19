@@ -23,6 +23,7 @@ export const config = {
             getCategories: `${path.event}/category`,
             getInterests: `${path.event}/interest`,
             getOrganizersEvents: `${path.event}/organizer`,
+            getSuggestion: `${path.event}/search`,
         },
         discount: {
             getAvailableDiscount: `${path.discount}/available`,

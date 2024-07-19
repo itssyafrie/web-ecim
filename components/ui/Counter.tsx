@@ -1,23 +1,28 @@
 "use client";
 
 import { MinusCircle, PlusCircle } from "lucide-react";
-import { useState } from "react";
 
-const Counter = () => {
-  const [ticketCount, setTicketCount] = useState<number>(0);
+interface CounterProps {
+  value: number;
+  onChange: (newValue: number) => void;
+}
+
+const Counter: React.FC<CounterProps> = ({ value, onChange }) => {
   const onIncrement = () => {
-    setTicketCount((prevCount) => prevCount + 1);
+    onChange(value + 1);
   };
+
   const onDecrement = () => {
-    setTicketCount((prevCount) => Math.max(0, prevCount - 1));
+    onChange(Math.max(0, value - 1));
   };
+
   return (
     <div className="grid grid-cols-3 gap-6">
-      <div onClick={onDecrement}>
+      <div onClick={onDecrement} className="cursor-pointer">
         <MinusCircle />
       </div>
-      <div className="text-center">{ticketCount}</div>
-      <div onClick={onIncrement}>
+      <div className="text-center">{value}</div>
+      <div onClick={onIncrement} className="cursor-pointer">
         <PlusCircle />
       </div>
     </div>
